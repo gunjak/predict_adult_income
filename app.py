@@ -113,7 +113,7 @@ def predict():
         workclass = request.form['workclass']
         fnlwgt = int(request.form['fnlwgt'])
         education_num = int(request.form['education_num'])
-        marital_status = request.form['marital_statu']
+        marital_status = request.form['marital_status']
         occupation = request.form['occupation']
         relationship = request.form['relationship']
         race = request.form['race']

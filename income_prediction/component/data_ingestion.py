@@ -1,5 +1,3 @@
-from operator import index
-from tkinter import E
 from income_prediction.logger import logging
 from income_prediction.exception import IncomeException
 from income_prediction.entity.entity_config import DataIngestionConfig
