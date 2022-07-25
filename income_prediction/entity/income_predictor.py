@@ -12,7 +12,7 @@ class IncomeData:
     def __init__(self,
                 age: int,
                 workclass: str,
-                 fnlwgt: int ,
+                fnlwgt: int ,
                 education_num: int, 
                 marital_status: str,
                 occupation: str,

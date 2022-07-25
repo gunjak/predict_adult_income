@@ -118,7 +118,7 @@ def predict():
         relationship = request.form['relationship']
         race = request.form['race']
         sex = request.form['sex']
-        capital_gain = int(request.form['capital_gian'])
+        capital_gain = int(request.form['capital_gain'])
         capital_loss= int(request.form['capital_loss'])
         hours_per_week= int(request.form['hours_per_week'])
         native_country= request.form['native_country']
