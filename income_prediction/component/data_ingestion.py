@@ -29,6 +29,9 @@ class DataIngestion:
                         'native_country','wages']
             df.drop(columns=df.columns[3],axis=1,inplace=True)
             df[df==' ?']=np.nan
+            cat=[i for i in df.columns if df[i].dtypes=='O']
+            for j in cat:
+                df[j]=df[j].str.replace(" ","")
             df.to_csv(file_path,index=False)
             logging.info(f'download data from {download_url} to {file_path}')
             return file_path

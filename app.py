@@ -9,7 +9,7 @@ from  income_prediction.exception import IncomeException
 import os, sys
 import json
 from  income_prediction.config.configuration import Configuration
-from  income_prediction.constant import CONFIG_DIR, get_current_time_stamp
+from  income_prediction.constant import *
 from  income_prediction.pipeline.pipeline import Pipeline
 from  income_prediction.entity.income_predictor import IncomePredictor, IncomeData
 from flask import send_file, abort, render_template
@@ -69,7 +69,6 @@ def render_artifact_dir(req_path):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method == "POST":
         try:
             return render_template('index.html')
         except Exception as e:
@@ -78,10 +77,11 @@ def index():
 
 @app.route('/view_experiment_hist', methods=['GET', 'POST'])
 def view_experiment_history():
-    experiment_df = Pipeline.get_experiments_status()
+    pipeline = Pipeline(config=Configuration(current_time_stamp=get_current_time_stamp()))
+    experiment_df = pipeline.get_experiments_status()
     context = {
-        "experiment": experiment_df.to_html(classes='table table-striped col-12')
-    }
+            "experiment": experiment_df.to_html(classes='table table-striped col-12')
+        }
     return render_template('experiment_history.html', context=context)
 
 
@@ -224,4 +224,4 @@ def render_log_dir(req_path):
 
 
 if __name__ == "__main__":
-    app.run()
+      app.run()
