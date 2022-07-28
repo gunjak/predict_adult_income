@@ -25,7 +25,7 @@
                     required>
 
                     <option value="State-gov">
-                        &lt; State-gov
+                        State-gov
                     </option>
                     <option value="Self-emp-not-inc">
                         Self-emp-not-inc
@@ -67,7 +67,7 @@
                    required>
         
                     <option value="Never-married">
-                        &lt; Never-married
+                         Never-married
                     </option>
                     <option value="Married-civ-spouse">
                         Married-civ-spouse
@@ -96,7 +96,7 @@
                     required>
                 
                     <option value="Adm-clerical">
-                        &lt;  Adm-clerical
+                         Adm-clerical
                     </option>
                     <option value="Exec-managerial">
                         Exec-managerial
@@ -143,18 +143,52 @@
             
             <div class="mb-3">
                 <label class="form-label">Relationship</label>
-                <input class="form-control" type="text" name="relationship"
-                    placeholder="Enter a value of relationship" required />
+                <select class="form-control" type="text" name="relationship"
+                    placeholder="Enter a value of relationship" required >
+                    <option value="Husband">
+                        Husband
+                  </option>
+                  <option value="Wife">
+                      Wife
+                  </option>
+                  <option value="Unmaried">
+                    Unmarried
+                </option>  
+                <option value="Not-in-family">
+                    Not-in-family
+                </option>  
+                <option value="Own-child">
+                    Own-child
+                </option>
+                <option value="Other-relative">
+                    Other-relative
+                </option>        
+              </select>     
             </div>
+
             <div class="mb-3">
                 <label class="form-label">race</label>
-                <input class="form-control" type="text" name="race" placeholder="Enter a value of race"
-                    required />
+                <select class="form-control" type="text" name="race" placeholder="Enter a value of race"
+                    required >
+                <option value="White">
+                    White
+                </option>
+                <option value="Black">
+                       Black
+                </option> 
+                </select>       
             </div>
             <div class="mb-3">
                 <label class="form-label">sex</label>
-                <input class="form-control" type="text" name="sex" placeholder="Enter a value of sex"
-                    required />
+                <select class="form-control" type="text" name="sex" placeholder="Enter a value of sex"
+                    required >
+                    <option value="Female">
+                        Female
+                    </option>
+                    <option value="Male">
+                           Male
+                    </option> 
+                    </select>     
             
             </div>
             <div class="mb-3">
@@ -178,7 +212,7 @@
                 <select class="form-control" type="text" name="native_country" placeholder="Enter a value of native_country" 
                     required />
                     <option value="United-States">
-                        &lt; United-States
+                        United-States
                     </option>
                     <option value="India">
                         India
