@@ -9,7 +9,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler,OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
+from sklearn.impute import SimpleImputer,KNNImputer
 import pandas as pd
 from income_prediction.constant import *
 from income_prediction.util.util import read_yaml_file,save_object,save_numpy_array_data,load_data
@@ -42,12 +42,12 @@ class DataTransformation:
 
 
             num_pipeline = Pipeline(steps=[
-                ('imputer', SimpleImputer(strategy="median")),
+                ('imputer',KNNImputer()),('scaler',StandardScaler())
             ]
             )
 
             cat_pipeline = Pipeline(steps=[
-                 ('imputer', SimpleImputer(strategy="most_frequent")),
+                 ('imputer', KNNImputer()),
                  ('one_hot_encoder', OneHotEncoder())
                  
             ]

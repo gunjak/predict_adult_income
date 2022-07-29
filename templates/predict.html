@@ -17,7 +17,7 @@
             <div class="mb-3">
                 <label class="form-label">Age</label>
                 <input class="form-control" type="number" name="age" placeholder="Enter age"
-                    required />
+                    required />                            
             </div>
             <div class="mb-3">
                 <label class="form-label">Workclass</label>
@@ -265,7 +265,11 @@
 
                 <td>wage</td>
                 <td>
-                    {{ context['wages'] }}
+                    {% if context['wages']==1 %}
+                    Greater than 50k
+                    {% elif context['wages'] ==0 %}
+                    Less than or equal to 50k 
+                    {% endif %}   
                 </td>
             </tr>
         </table>
