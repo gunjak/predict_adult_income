@@ -47,7 +47,7 @@ class DataTransformation:
             )
 
             cat_pipeline = Pipeline(steps=[
-                 ('imputer', KNNImputer()),
+                 ('impute', SimpleImputer(strategy="most_frequent")),
                  ('one_hot_encoder', OneHotEncoder())
                  
             ]

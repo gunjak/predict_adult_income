@@ -181,7 +181,6 @@ def update_model_config():
         if request.method == 'POST':
             model_config = request.form['new_model_config']
             model_config = model_config.replace("'", '"')
-            print(model_config)
             model_config = json.loads(model_config)
 
             write_yaml_file(file_path=MODEL_CONFIG_FILE_PATH, data=model_config)
